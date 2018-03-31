@@ -1,0 +1,147 @@
+@CHARSET "ISO-8859-1";
+*
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+}
+
+/*Para que las estructuras se empleen en manera de bloque*/
+header, section, footer, aside, nav, article, figure, figcaption
+{
+  display: block;
+}
+
+body
+{
+}
+
+header
+{
+  margin: auto;
+  width: auto;
+  height: 50px;
+  background-color: #0080c0;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+nav
+{
+  margin: auto;
+  float: left;
+  margin-top: 2px;
+  width: 250px;
+  height: auto;
+  border: 1px solid rgb(0, 0, 0);
+  position: fixed;
+}
+
+.main1
+{
+  margin: auto;
+  margin-top: 2px;
+  margin-left: 253px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+.main2
+{
+  margin: auto;
+  margin-top: 2px;
+  margin-left: 83px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+section
+{
+	text-align: center;
+	border: 1px solid rgb(0,0,0);
+}
+
+article
+{
+  background: rgb(230, 242, 255);
+  border: 1px solid rgb(0,0,0);
+}
+
+aside
+{
+  background: rgb(102, 153, 255);
+  float: left;
+  text-align: center;
+  border: 1px solid rgb(0,0,0);
+  padding: 10px;
+  width: 200px;
+  height: 500px;
+}
+
+footer
+{
+  margin: auto;
+  margin-top: 2px;
+  width: auto;
+  height: 50px;
+  background-color: #0080c0;
+  border: 1px solid rgb(0, 0, 0);
+  clear: both;
+}
+
+.titulofooter
+{
+	margin: auto;
+	margin-top: 10px;
+	margin-left: 50%;
+	color: white;
+}
+.tituloimagenford
+{
+	float: left;
+	margin-left: 45%;
+}
+.tituloford
+{
+	color: white;
+	font-size: 30px;
+}
+
+.dbhomeuser
+{
+	margin: auto;
+	margin-top: 50px;
+	margin-left: 45%;
+}
+
+.dbhomeuser2
+{
+	margin: auto;
+	float: left;
+	margin-top: 50px;
+	margin-left: 35%;
+}
+
+.dbhomeuser3
+{
+	margin: auto;
+	margin-top: 50px;
+	margin-left: 60%;
+}
+
+.dlhomeuser
+{
+	margin: auto;
+	font-size: 20px;
+}
+
+.btntrans
+{
+	background: transparent;
+	border: none;
+}

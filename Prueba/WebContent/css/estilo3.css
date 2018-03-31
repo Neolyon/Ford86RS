@@ -1,0 +1,466 @@
+#principal{
+		width: 1330px;
+		height: 800px;
+		border: 1px solid #000;
+		margin: auto;
+		font-family: cursive;
+
+
+}
+
+
+
+.menu{
+		padding: 0px 10px;
+		width: 690px;
+		height: 60px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+
+
+
+.menu ul .nueva{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/nuevo.png);
+		background-position: top;
+
+}
+
+
+
+.menu ul .guardar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/guardar.png);
+		background-position: top;
+
+}
+
+.menu ul .cancelar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/cancelar.png);
+		background-position: top;
+
+}
+
+.menu ul .limpiar{
+
+		width: 200px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/limpiar.png);
+		background-position: top;
+
+}
+.info {
+
+		width: 800px;
+		height: 70px;
+		float: left;
+}
+
+.info .cargar {
+
+		width: 150px;
+		height: 30px;
+		padding-top: 0px;
+		text-align: center;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/cargar.png);
+		background-position: left;
+}
+
+.info ul p{
+
+		float: left;
+		width: 150px;
+		height: 40px;
+		text-align: center;
+		
+}
+
+
+
+.datos{
+	padding: 10px 20px;
+		width: 1280px;
+		height: 580px;
+		border: 2px solid #ccc;
+		float: left;
+}
+
+.menu1{
+		padding: 0px 10px;
+		width: 500px;
+		height: 50px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+.menu1 ul .btnconsultainfo
+{
+		width: 180px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/consulta.png");
+		background-position: left;
+}
+
+.menu1 ul .btneditarinfo
+{
+		width: 170px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/editar.png");
+		background-position: left;
+}
+
+.menu1 ul .btnbaja
+{
+		width: 120px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/baja.png");
+		background-position: left;
+}
+
+.menu2{
+		padding: 0px 10px;
+		width: 405px;
+		height: 50px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+.menu2 ul .btnguardar
+{
+		width: 90px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/guardar.png");
+		background-position: left;
+}
+
+.menu2 ul .btncancelar
+{
+		width: 90px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/cancelar.png");
+		background-position: left;
+}
+
+.menu2 ul .btnlimpiar
+{
+		width: 90px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/limpiar.png");
+		background-position: left;
+}
+
+.menu2 ul .btnregresar
+{
+		width: 100px;
+		height: 40px;
+		padding-top: 0px;
+		text-align: right;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url("/Prueba/imagenes/recovery.png");
+		background-position: left;
+}
+
+.menu3{
+		padding: 0px 10px;
+		width: 480px;
+		height: 60px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+
+
+
+.menu3 ul .nuevo{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/docentenuevo.png);
+		background-position: top;
+}
+
+.menu3 ul .quitar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/removerusuario.png);
+		background-position: top;
+
+}
+
+.menu3 ul .cargo{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/docente.png);
+		background-position: top;
+
+}
+
+.menu4{
+		padding: 0px 10px;
+		width: 480px;
+		height: 60px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+
+
+
+.menu4 ul .borrar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/borrar.png);
+		background-position: top;
+}
+
+.menu4 ul .actualizar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/actualizar.png);
+		background-position: top;
+
+}
+
+.menu4 ul .limpiar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/limpiar.png);
+		background-position: top;
+}
+
+.menu5{
+		padding: 0px 10px;
+		width: 480px;
+		height: 60px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+		background-color: #0080c0;
+}
+
+
+
+
+.menu5 ul .nuevo{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/nuevo.png);
+		background-position: top;
+}
+
+.menu5 ul .editar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/editar.png);
+		background-position: top;
+
+}
+
+.menu5 ul .borrar{
+
+		width: 150px;
+		height: 50px;
+		padding-top: 25px;
+		text-align: center;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/borrar.png);
+		background-position: top;
+}
+
+.menu6{
+		padding: 0px 10px;
+		width: 235px;
+		height: 50px;
+		border: 1px solid #ccc;
+		float: left;
+		margin-left: 20px;
+}
+
+
+
+
+.menu6 ul .guardar{
+
+		width: 100px;
+		height: 40px;
+		text-align: right;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/guardar.png);
+		background-position: left;
+}
+
+.menu6 ul .cancelar{
+
+		width: 100px;
+		height: 40px;
+		text-align: right;
+		background-color: aliceblue;
+		font-family: cursive;
+		box-shadow:1px 1px grey;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		background-image: url(/Prueba/imagenes/cancelar.png);
+		background-position: left;
+
+}

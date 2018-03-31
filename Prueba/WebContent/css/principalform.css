@@ -1,0 +1,23 @@
+.navbar-inverse
+{
+    background: rgb(26, 140, 255);
+    border-bottom-color: rgb(255,255,255);
+}
+.navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>.dropdown>a .caret
+{
+    color: rgb(255,255,255);
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-nav>li>.dropdown-menu
+{
+    background: rgb(255,255,255);
+}
+.nav-pills>li>a,
+{
+    color: rgb(255,255,255);
+}
+
+.nav>li>a:hover, .nav>li>a:focus
+{
+    background-color: rgb(255,255,255);
+}
