@@ -1,4 +1,9 @@
-<link rel="stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
+<script type="text/javascript" src ="/Prueba/js/reinscripciones/reinsinfo.js">
+</script>
+<script type="text/javascript" src ="/Prueba/js/AJAX/ReinscripcionesAJAX.js">
+</script>
+<link rel=
+"stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
 <main id = "main" class = "main1">
 <div> 
 
@@ -30,23 +35,23 @@
  <br><br>
  <img src="/Prueba/imagenes/filtrar.png">Filtrar Informaci&oacute;n por:
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <input type="radio">No Filtrar
+ <input type="radio" name = "filtrar" checked>No Filtrar
  &nbsp;
- <input type="radio">No. Control
+ <input type="radio"name = "filtrar">No. Control
  &nbsp;
- <input type="radio">Ciclo Escolar
+ <input type="radio" name = "filtrar">Ciclo Escolar
  &nbsp;
- <input type="radio">Grado
+ <input type="radio" name = "filtrar">Grado
  &nbsp;
- <input type="radio">Grupo
+ <input type="radio" name = "filtrar">Grupo
  &nbsp;
- <input type="radio">Asesor
+ <input type="radio" name = "filtrar">Asesor
  
-   <button class="actualizar">Actualizar Tabla</button>
-  <button class="eliminar">Eliminar Registro</button>
+   <button class="actualizar" onclick="mostrarTodosLosAlumnosReinscritos();">Actualizar Tabla</button>
+  <button class="eliminar" onclick="eliminarTodosLosAlumnosReinscritos();">Eliminar Registro</button>
  <br><br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106">  
+ &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106" id="entrada" onkeypress="inicio();">  
 
   <br><br><br>
     <hr>
@@ -54,9 +59,10 @@
 
     <legend>Informaci&oacute;n de todas las Reinscripciones</legend>
 	
-	 <table style="width:100%" border=2px>
+	 <table id="tabla" style="width:100%" border=2px>
 	 
   <tr>
+  	<th></th>
     <th>No. Control</th>
     <th>Recursa</th>
 	<th>Ciclo Escolar</th>
@@ -65,48 +71,6 @@
 	<th>Turno Asignado</th>
 	<th>Asesor Asignado</th>
   </tr>
-  
-  <tr>
-	 <td>*</td>
-	  <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-   <tr>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-     <tr>
-	 <td>*</td>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-     <tr>
-	 <td>*</td>
-    <td>*</td>
-	<td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
- 
-  
 </table> 
 
  </fieldset>

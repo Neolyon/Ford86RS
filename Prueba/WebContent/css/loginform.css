@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400);
 body {
-  background-color:#fff;
+  background-image: url("/Prueba/imagenes/bg1.jpg");
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
 }
@@ -8,7 +8,7 @@ body {
 .center_div{
     margin: 0px;
     padding: 300px;
-    width:80% /* value of your choice which suits your alignment */
+    width:80%; /* value of your choice which suits your alignment */
 }
 
 .container {
@@ -41,4 +41,17 @@ h4 {
 
 .wrapper {
     text-align: center;
+}
+
+
+.centrar
+{
+	padding-left: 650px;
+	padding-top: 0px;
+}
+
+.centrarlogo
+{
+	padding-top: 50px;
+	padding-left: 625px;
 }

@@ -96,6 +96,8 @@ footer
 
 .titulofooter
 {
+	position: absolute;
+  	bottom: 0;
 	margin: auto;
 	margin-top: 10px;
 	margin-left: 50%;
@@ -144,4 +146,15 @@ footer
 {
 	background: transparent;
 	border: none;
+}
+
+.bodyexit
+{
+	background-image: url("/Prueba/imagenes/bg1.jpg");
+}
+
+.ir
+{
+	padding-left: 700px;
+	padding-top: 300px;
 }

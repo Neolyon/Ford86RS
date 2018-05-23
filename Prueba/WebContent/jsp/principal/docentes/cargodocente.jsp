@@ -1,86 +1,64 @@
+<script type="text/javascript" src="/Prueba/js/docentes/cargodocentes.js">
+</script>
+<script type="text/javascript" src="/Prueba/js/AJAX/DocentesAJAX.js">
+</script>
+<script type="text/javascript" src="/Prueba/js/AJAX/CicloEscolar.js">
+</script>
 <link rel="stylesheet" type="text/css" href="/Prueba/css/estilo3.css">
+<body onload="obtenerCicloActual(); generarComboGrupos(); generarComboMaterias();">
 <main id = "main" class = "main1">
-<div> <br><br>
-
-<fieldset style="width:50%">
- <legend>Men&uacute;</legend>
-<div class="menu3">
- <ul>
- <button class = "nuevo" type="submit">Nuevo Docente</button>
- <button class = "quitar" type="submit">Quitar Docente</button>
- <button class = "cargo" type="submit">Poner Cargo</button><br>
- </ul>
- </div>
- </fieldset>
+<form action="#" method="post">
+<div>
  
  <fieldset>
     <legend>Cargo</legend>
     <center>
     Ciclo Escolar Actual:
-	<input type="text" size="5">
+	<input type="text" size="5" id="ciclo" readonly>
 	</center>
 	<br>
-	Nombre:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Grupo:*  &nbsp;&nbsp;<select>
-  	<option value="A">A</option>
- 	 <option value="B">B</option>
- 	 <option value="C">C</option>
+	Grupo:* <select id="grupo" onchange="generarComboSeleccionado();" required="required">
   	</select>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	Grado:* &nbsp;&nbsp;<input type="text" size="4">
+	Grado:* &nbsp;&nbsp;<input type="text" size="4" id="grado" readonly required="required">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-	Turno:*&nbsp;&nbsp;<input type="text" size="8">
+	Turno:*&nbsp;&nbsp;<input type="text" size="8" id ="turno" readonly required="required">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-	Sal&oacute;n:*&nbsp;&nbsp;<input type="text" size="3">
-        <br><br>
-	Elegir materia a cargar:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select>
-		<option value="Qu&iacute;mica">Qu&iacute;mica</option>
-		<option value="Espa&nacute;ol">Espa&nacute;ol</option>
-		<option value="C&aacute;lculo">C&aacute;lculo</option>
+	Sal&oacute;n:*&nbsp;&nbsp;<input type="text" size="3" id="salon" readonly required="required"> 
+        <br>
+    Descripcion: <input type="text" size="60" id="desc" required="required">
+        <br>
+        <br>
+	<fieldset>
+	<legend>Elegir Materias</legend>
+	Elegir materia a cargar:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="materiasa">
 		</select>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<button class = "btntrans" type="submit"><img src="/Prueba/imagenes/agregar.png">Cargar Materia</button>
+	<button class = "btntrans" id="agregar" onclick="agregarMateria();"><img src="/Prueba/imagenes/agregar.png">Cargar Materia</button>
 	<br>
-	Elegir materia a Quitar:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select>
-		<option value="Qu&iacute;mica">Qu&iacute;mica</option>
-		<option value="Espa&nacute;ol">Espa&nacute;ol</option>
-		<option value="C&aacute;lculo">C&aacute;lculo</option>
+	Elegir materia a Quitar:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="materiasq" required="required">
 		</select>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<button class = "btntrans" type="submit"><img src="/Prueba/imagenes/quitar.png">Cargar Materia</button>
+	<button class = "btntrans" id="quitar" onclick="quitarMateria();"><img src="/Prueba/imagenes/quitar.png">Quitar Materia</button>
+	</fieldset>
  </fieldset>
 <br><br><br>
  <fieldset>
     <legend>Informaci&oacute;n de materias a impartir</legend>	
-	<table style="width:100%" border=2px>
+	<table style="width:100%" border=2px id="tabla">
   <tr>
     <th>Nombre</th>
     <th>Descripci&oacute;n</th>
-
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
   </tr>
   </table> 
  </fieldset>
 <br><br>
 </div>
 <center>
-	<button class = "btntrans" type="submit"><img src="/Prueba/imagenes/aceptar.png">Dar de alta</button>	
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<button class = "btntrans" type="submit"><img src="/Prueba/imagenes/cancelar.png">Cancelar Operaci&oacute;n</button>
+	<img src="/Prueba/imagenes/aceptar.png"><input type="submit" class = "btntrans" type="submit" id="alta" value="Dar de Alta">
+	<button class = "btntrans" id="cancelar" onclick="limpiar();"><img src="/Prueba/imagenes/cancelar.png">Cancelar Operaci&oacute;n</button>
 </center>
 <br>
+</form>
 </main>
+</body>

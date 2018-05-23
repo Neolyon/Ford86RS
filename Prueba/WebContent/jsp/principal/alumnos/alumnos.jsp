@@ -1,3 +1,8 @@
+<script type="text/javascript" src="/Prueba/js/alumnos/alumnos.js">
+</script>
+<script type="text/javascript" src="/Prueba/js/AJAX/AlumnosAJAX.js">
+</script>
+<body onload="cargarInfo();">
 <main id = "main" class = "main1">
 <div> 
 <fieldset>
@@ -25,54 +30,31 @@
  <br><br>
  <img src="/Prueba/imagenes/filtrar.png">Filtrar Informaci&oacute;n por:
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <input type="radio">No Filtrar
+ <input type="radio" name = "filtrar" checked>No Filtrar
  &nbsp;
- <input type="radio">No. Lista
+ <input type="radio" name = "filtrar" >No. Lista
  &nbsp;
- <input type="radio">No. Control
+ <input type="radio" name = "filtrar" >No. Control
  &nbsp;
- <input type="radio">Nombre
+ <input type="radio" name = "filtrar" >Nombre
  &nbsp;
- <input type="radio">Sexo
+ <input type="radio" name = "filtrar" >Sexo
  &nbsp;
- <input type="radio">Edad
+ <input type="radio" name = "filtrar" >Edad
  &nbsp;
- <input type="radio">Repetidor
+ <input type="radio" name = "filtrar" >Repetidor
  <br><br>
- &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106">
+ &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input id = "entrada" type="text" size="106" onkeypress="inicio();">
   <br><br><br>
  <fieldset>
     <legend>Alumnos</legend>
-	 <table style="width:100%" border=2px>
+	 <table style="width:100%" border=2px id="tabla">
   <tr>
-    <th>Title 1</th>
-    <th>Title 2</th>
-	<th>Title 3</th>
-	<th>Title 4</th>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-  </tr>
-    <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-  </tr>
-    <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
+    <th>No. Lista</th>
+    <th>No. Control</th>
+	<th>Nombre</th>
+	<th>Fecha de Nacimiento</th>
+	<th>Sexo</th>
   </tr>
 </table> 
  </fieldset>
@@ -88,29 +70,30 @@
   </tr>
   <tr>
     <td>Alumnos Inscritos</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
+    <td id = "aih"></td>
+    <td id = "aim"></td>
+	<td id = "ait"></td>
   </tr>
   <tr>
     <td>Repetidores</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
+    <td id = "rh"></td>
+    <td id = "rm"></td>
+	<td id = "rt"></td>
   </tr>
     <tr>
     <td>Promovidos</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
+    <td id = "ph"></td>
+    <td id = "pm"></td>
+	<td id = "pt"></td>
   </tr>
     <tr>
     <td>No Promovidos</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
+    <td id = "nph"></td>
+    <td id = "npm"></td>
+	<td id = "npt"></td>
   </tr>
 </table> 
  </fieldset>
 </div>
 </main>
+</body>

@@ -1,3 +1,7 @@
+<script type="text/javascript" src ="/Prueba/js/inscripciones/insinfo1.js">
+</script>
+<script type="text/javascript" src ="/Prueba/js/AJAX/InscripcionesAJAX.js">
+</script>
 <link rel="stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
 <main id = "main" class = "main1">
 <div> 
@@ -28,21 +32,21 @@
  <br><br>
  <img src="/Prueba/imagenes/filtrar.png">Filtrar Informaci&oacute;n por:
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <input type="radio">No Filtrar
+ <input type="radio" name = "filtro" checked>No Filtrar
  &nbsp;
- <input type="radio">No. Lista
+ <input type="radio" name = "filtro">No. Lista
  &nbsp;
- <input type="radio">Nombre
+ <input type="radio" name = "filtro">Nombre
  &nbsp;
- <input type="radio">Edad
+ <input type="radio" name = "filtro">Edad
  &nbsp;
- <input type="radio">Nuevo Ingreso
+ <input type="radio" name = "filtro">Nuevo Ingreso
  &nbsp;
- <input type="radio">Repetidor
-   <button class="actualizar">Actualizar Tabla</button>
+ <input type="radio" name = "filtro">Repetidor
+   <button class="actualizar" onclick="mostrarAlumnosPorDocente();">Actualizar Tabla</button>
  <br><br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106">  
+ &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106" id="entrada" onkeypress="inicio();" required>  
 
   <br><br><br>
     <hr>
@@ -50,75 +54,19 @@
 
     <legend>Informaci&oacute;n de inscripciones</legend>
 	
-	 <table style="width:100%" border=2px>
+	 <table style="width:100%" border=2px id = "tabla">
 	 
   <tr>
+  	<th></th>
     <th>No. Lista</th>
     <th>Nombre del alumno</th>
-	<th>Edad</th>
+	<th>Fecha Nacimiento</th>
 	<th>Sexo</th>
-	<th>Repetidor</th>
-	<th>Nuevo Ingreso</th>
 	<th>Domicilio</th>
-	<th>Telefono</th>
-	<th>Nombre del Padre</th>
+	<th>Nombre del Tutor</th>
 	<th>Ocupación</th>
+	<th>Telefono</th>
   </tr>
-  
-  <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-  <tr>
-     <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-    <tr>
-     <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
-    <tr>
-    <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	 <td>*</td>
-    <td>*</td>
-    <td>*</td>
-	<td>*</td>
-	<td>*</td>
-	<td>*</td>
-  </tr>
-  
- 
-  
 </table> 
 
  </fieldset>
