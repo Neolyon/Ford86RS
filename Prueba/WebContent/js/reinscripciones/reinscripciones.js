@@ -102,13 +102,17 @@ function MostrarL()
 	//document.getElementById("btnl").style.visibility = "visible";
 }
 
-function validarNC() 
+function validarNC(idND) 
 {
-	if (document.getElementById("numc").value.length == 10 && validarTel(document.getElementById("numc").value)) 
+	var nc = document.getElementById('numc').value;
+	var expresionRegular2=/[0-9]{4}[A-Z]{2}[0-9]{4}/;
+	if (expresionRegular2.test(nc)) 
 	{
 		mostrar(); 
 		OcularNuevo(); 
 		MostrarL();
+		consultarAlumno(nc, idND);
+		document.getElementById('numcon').value = nc;
 	}
 }
 
@@ -130,3 +134,39 @@ function validarTel(dato)
     
     return true;
   }
+
+function consultarAlumno(nc, idND)
+{
+	XMLHttpRequest 
+	ajax = new XMLHttpRequest();
+	
+	ajax.onreadystatechange = function() 
+	{
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			infoConsultada(this.responseText);
+		}
+	};
+	
+	ajax.open("get", "Reinscripciones?op=ca&nc="+nc+"&idND="+idND+"", true);
+	ajax.send();
+}
+
+function infoConsultada(datos) 
+{
+	var array = eval(datos);
+	document.getElementById('nombrea').value = array[0].nomA;
+	document.getElementById('curpa').value = array[0].curpA;
+	document.getElementById('lugara').value = array[0].lugarA;
+	document.getElementById('fechaa').value = array[0].fechaA;
+	document.getElementById('domicilioa').value = array[0].domA;
+	document.getElementById('tel1a').value = array[0].tel1A;
+	document.getElementById('tel2a').value = array[0].tel2A;
+	document.getElementById('asesora').value = array[0].nomD;
+	document.getElementById('gradoa').value = array[0].graA;
+	document.getElementById('grupoa').value = array[0].gruA;
+	document.getElementById('asesorasig').value = array[0].nomND;
+	document.getElementById('gradoc').value = array[0].graN;
+	document.getElementById('grupoc').value = array[0].gruN;
+	document.getElementById('turnoc').value = array[0].turN;
+}

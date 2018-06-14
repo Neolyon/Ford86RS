@@ -37,6 +37,7 @@ function generarCombo(datos)
     {
     	var option = document.createElement("option");
     	option.text = array[i].nombre;
+    	option.value = array[i].nombre;
     	combo.add(option); 
 	}
 }
@@ -231,6 +232,7 @@ function generarComboG(datos)
     {
     	var option = document.createElement("option");
     	option.text = array[i].nombre;
+    	option.value = array[i].nombre;
     	if (i == 0) 
     	{
     		document.getElementById('grado').value = array[i].grado;

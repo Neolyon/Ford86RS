@@ -4,12 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript" src = "/Prueba/js/login/loginscript.js"></script>
 <link rel = "stylesheet" type="text/css" href = "/Prueba/css/loginform.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <title>Login</title>
 </head>
 <body>
+<form action="Sesion?op=l" method = "post">
 <div class = "centrarlogo"><img src="/Prueba/imagenes/fordrs86.png" class="img-rounded"></div>
 <dir class = "centrar">
 <div class="container">
@@ -17,14 +17,14 @@
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
             <h4>¡Bienvenid@!</h4>
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="usuario" required />
+            <input type="text" id="userName" name = "user" class="form-control input-sm chat-input" placeholder="usuario" required />
             </br>
-            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="contraseña" required/>
+            <input type="password" id="userPassword" name = "pass" class="form-control input-sm chat-input" placeholder="contraseña" required/>
             </br>
             <div class="wrapper">
             <span class="group-btn">    
             	<!-- href="/Prueba/jsp/principal/principal.jsp" -->
-                <a class="btn btn-primary btn-md" onclick="login();">Iniciar Sesión <i class="fa fa-sign-in"></i></a>
+                <input type="submit" class="btn btn-primary btn-md" value = "Iniciar Sesión "><i class="fa fa-sign-in"></i></a>
                 <br><br><br>
                 <a href="/Prueba/jsp/login/recuperacion.jsp" class="btn btn-success">Recuperar Información</a>
             </span>
@@ -35,5 +35,6 @@
     </div>
 </div>
 </dir>
+</form>
 </body>
 </html>

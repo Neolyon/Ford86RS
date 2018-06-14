@@ -9,7 +9,11 @@ import org.json.simple.JSONObject;
 
 import java.sql.PreparedStatement;
 
+import Objects.Alumno;
+import Objects.DatosEs;
 import Objects.Opcion;
+import Objects.Reinscripcion;
+
 import java.util.*;
 
 public class ReinscripcionesQuerys
@@ -85,5 +89,66 @@ public class ReinscripcionesQuerys
 			System.err.println("<<<MySQL>>> Error al ejecutar la consulta: \n" + e.getMessage());
 		}
 		return estatus;
+	}
+	
+	public boolean actualizarDE(DatosEs daes)
+	{
+		boolean estatus = false;
+		String sql = "update datosescolares set idCiclo = ?, idDocente = ?, idParcial = ?, idCalificacionGlobal = ?,"
+				+ "estaRepitiendo = ?, estadoEscolar = ?, estatus = ?  where idDatoEscolar = ?;";
+		
+		JSONArray array = new JSONArray();
+		try
+		{
+			ConnectionDB con = new ConnectionDB();
+			PreparedStatement ps = con.get().prepareStatement(sql);
+			ps.setInt(1, daes.getIdCiclo());
+			ps.setInt(2, daes.getIdDocente());
+			ps.setInt(3, daes.getIdParcial());
+			ps.setInt(4, daes.getIdCalificacionGlobal());
+			ps.setString(5, daes.getEstaRepitiendo());
+			ps.setString(6, daes.getEstadoEscolar());
+			ps.setString(7, daes.getEstatus());
+			ps.setInt(8, daes.getIdDatoEscolar());
+			if (ps.executeUpdate() == 1)
+			{
+				estatus = true;
+			}
+			System.out.println(">>>>>>>>> Dato escolar actualizado con exito");
+			ps.close();
+			con.close();
+			
+		} catch (SQLException e)
+		{
+			System.err.println("<<<MySQL>>> Error al ejecutar la consulta: \n" + e.getMessage());
+		}
+		return estatus;
+	}
+	
+	public boolean insertar(Reinscripcion r)
+	{
+		String query = "INSERT INTO `reinscripciones`(`idReinscripcion`, `idAlumno`,"
+				+ " `idDatoEscolar`, `idDocente`, `recursaEsteGrado`, `estatus`)"
+				+ " VALUES (null, ?, ?, ?, ?, ?)";
+		boolean ban = false;
+		try
+		{
+			ConnectionDB con = new ConnectionDB();
+			PreparedStatement ps = con.get().prepareStatement(query);
+			ps.setInt(1, r.getIdAlumno());
+			ps.setInt(2, r.getIdDatoEscolar());
+			ps.setInt(3, r.getIdDocente());
+			ps.setString(4, r.getRecursaEsteGrado());
+			ps.setString(5, r.getEstatus());
+			ps.execute();
+			ps.close();
+			con.close();
+			System.out.println(">>>>>>>>>>>> Reinscripcion insertado con exito");
+			ban = true;
+		} catch (SQLException e)
+		{
+			System.out.println("Error:" + e.getMessage());
+		}
+		return ban;
 	}
 }

@@ -1,4 +1,4 @@
-function mostrarAlumnosPorDocente() {
+function mostrarAlumnosPorDocente(id) {
 	XMLHttpRequest 
 	ajax = new XMLHttpRequest();
 	
@@ -10,7 +10,7 @@ function mostrarAlumnosPorDocente() {
 		}
 	};
 	
-	ajax.open("get", "Inscripciones?op=ct&idDocente=2", true);
+	ajax.open("get", "Inscripciones?op=ct&idDocente="+id, true);
 	ajax.send();
 }
 

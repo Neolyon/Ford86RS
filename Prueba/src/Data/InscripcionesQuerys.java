@@ -9,6 +9,8 @@ import org.json.simple.JSONObject;
 
 import java.sql.PreparedStatement;
 
+import Objects.DatosEs;
+import Objects.Inscripcion;
 import Objects.Opcion;
 import java.util.*;
 
@@ -150,16 +152,22 @@ public class InscripcionesQuerys
 		return array;
 	}
 
-	public boolean insertar(Opcion o)
+	public boolean insertar(Inscripcion i)
 	{
-		String query = "insert into opciones values(null,?,?)";
+		String query = "INSERT INTO `inscripciones`(`idInscripcion`, `idCiclo`, `idDocente`,"
+				+ " `idAlumno`, `viveCon`, `otrasSituaciones`, `estatus`, `situacionEscolar`) VALUES (null, ?, ?, ?, ?, ?, ?, ?)";
 		boolean ban = false;
 		try
 		{
 			ConnectionDB con = new ConnectionDB();
 			PreparedStatement ps = con.get().prepareStatement(query);
-			ps.setString(1, o.getNombre());
-			ps.setString(2, o.getDescripcion());
+			ps.setInt(1, i.getIdCiclo());
+			ps.setInt(2, i.getIdDocentes());
+			ps.setInt(3, i.getIdAlumno());
+			ps.setString(4, i.getViveCon());
+			ps.setString(5, i.getOtrasSituaciones());
+			ps.setString(6, i.getEstatus());
+			ps.setString(7, i.getSituacionEscolar());
 			ps.execute();
 			ps.close();
 			con.close();
@@ -171,6 +179,34 @@ public class InscripcionesQuerys
 		return ban;
 	}
 
+	public boolean insertarDAES(DatosEs de)
+	{
+		String query = "INSERT INTO `datosescolares`(`idDatoEscolar`, `idCiclo`,"
+				+ " `idAlumno`, `idDocente`, `idParcial`, `idCalificacionGlobal`,"
+				+ " `estaRepitiendo`, `estadoEscolar`, `estatus`)"
+				+ " VALUES (null, ?, ?, ?, null, null, ?, ?, ?)";
+		boolean ban = false;
+		try
+		{
+			ConnectionDB con = new ConnectionDB();
+			PreparedStatement ps = con.get().prepareStatement(query);
+			ps.setInt(1, de.getIdCiclo());
+			ps.setInt(2, de.getIdAlumno());
+			ps.setInt(3, de.getIdDocente());
+			ps.setString(4, de.getEstaRepitiendo());
+			ps.setString(5, de.getEstadoEscolar());
+			ps.setString(6, de.getEstatus());
+			ps.execute();
+			ps.close();
+			con.close();
+			ban = true;
+		} catch (SQLException e)
+		{
+			System.out.println("Error:" + e.getMessage());
+		}
+		return ban;
+	}
+	
 	public boolean actualizar(Opcion o, int id)
 	{
 		String query = "update opciones set NOMBRE = '" + o.getNombre() + "', DESCRIPCION = '" + o.getDescripcion()

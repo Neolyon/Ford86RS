@@ -4,6 +4,7 @@
 </script>
 <link rel=
 "stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
+<body onload="mostrarTodosLosAlumnosReinscritos();">
 <main id = "main" class = "main1">
 <div> 
 
@@ -77,3 +78,4 @@
  <br>
  </div>
 </main>
+</body>

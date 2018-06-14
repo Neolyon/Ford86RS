@@ -3,6 +3,7 @@
 <script type="text/javascript" src ="/Prueba/js/AJAX/InscripcionesAJAX.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
+<body onload="mostrarAlumnosPorDocente(${docente.idDocente});">
 <main id = "main" class = "main1">
 <div> 
 
@@ -43,7 +44,7 @@
  <input type="radio" name = "filtro">Nuevo Ingreso
  &nbsp;
  <input type="radio" name = "filtro">Repetidor
-   <button class="actualizar" onclick="mostrarAlumnosPorDocente();">Actualizar Tabla</button>
+   <button class="actualizar" onclick="mostrarAlumnosPorDocente(${docente.idDocente});">Actualizar Tabla</button>
  <br><br>
 
  &nbsp;&nbsp;&nbsp;&nbsp;Ingrese el dato a buscar: &nbsp;&nbsp;&nbsp;<input type="text" size="106" id="entrada" onkeypress="inicio();" required>  
@@ -73,3 +74,4 @@
  <br>
  </div>
 </main>
+</body>

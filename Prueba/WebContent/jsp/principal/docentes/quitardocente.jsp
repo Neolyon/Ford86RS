@@ -4,12 +4,12 @@
 </script>
 <body onload="mostrarDocentesDisponibles();">
 <main id = "main" class = "main1">
-<form action="#" method="post">
+<form action="Docentes?op=e" method="post">
 <div> 
  <fieldset style="width:30%">
-    <b>Elige el docente:* <b>&nbsp;&nbsp;&nbsp; <select id="combo" required="required">
+    <b>Elige el docente:* <b>&nbsp;&nbsp;&nbsp; <select id="combo" name = "nombre" required="required">
 		</select>
-		 <button class = "btntrans" type="submit" onclick="quitar();"><img src="/Prueba/imagenes/guardar.png">Quitar Y Guardar</button>
+		 <input class = "btntrans" type="submit" value = "Quitar"><img src="/Prueba/imagenes/guardar.png">
  </fieldset>
 </div>
 </form>

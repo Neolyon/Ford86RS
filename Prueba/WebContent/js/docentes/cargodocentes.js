@@ -1,3 +1,25 @@
+var array = []
+
+function listaMa() 
+{
+	document.getElementById("lm").value = "";
+	
+	var datos = "";
+	for (var i = 0; i < array.length; i++) 
+	{
+		if (i == 0) 
+		{
+			datos = array[i];
+		}
+		else
+		{
+			datos += " " + array[i];
+		}
+	}
+	
+	document.getElementById("lm").value = datos;
+}
+
 function limpiar() 
 {
 	document.getElementById("docentes").selectedIndex = "0"; 
@@ -29,6 +51,7 @@ function agregarMateria()
 		var desc = document.getElementById("desc").value;
 		var nom = document.getElementById("materiasa").value;
 		agregarATabla(nom, desc);
+		array.push(nom);
 		comboagregar.remove(document.getElementById("materiasa").selectedIndex);
 		var obj = document.createElement('option');
 		obj.text = nom;
@@ -49,6 +72,13 @@ function quitarMateria()
 		comboquitar.remove(document.getElementById("materiasq").selectedIndex);
 		var obj = document.createElement('option');
 		obj.text = nom;
+		for (var i = 0; i < array.length; i++) 
+		{
+			if (array[i] == nom) 
+			{
+				array.splice(i, 1);
+			}
+		}
 		if (enCombo(document.getElementById('materiasa'), nom) == false) 
 		{
 			comboagregar.add(obj);
@@ -69,11 +99,8 @@ function agregarATabla(nom, desc)
 	td2.id = nom + '2';
 	
 	var text1 = document.createTextNode(nom+'');
-	var text2 = document.createTextNode(desc+'');
 	td1.appendChild(text1);
-	td2.appendChild(text2);
 	tr.appendChild(td1);
-	tr.appendChild(td2);
 	tabla.appendChild(tr);
 }
 function quitarATabla(nom) 
@@ -81,9 +108,7 @@ function quitarATabla(nom)
 	var tabla = document.getElementById('tabla');
 	var tr = document.getElementById(nom+'0');
 	var td1 = document.getElementById(nom+'1');
-	var td2 = document.getElementById(nom+'2');
 	
-	tr.removeChild(td2);
 	tr.removeChild(td1);
 	tabla.removeChild(tr);
 }

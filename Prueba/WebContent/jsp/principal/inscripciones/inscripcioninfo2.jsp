@@ -1,6 +1,7 @@
 <script type="text/javascript" src ="/Prueba/js/inscripciones/insinfo2.js"></script>
 <script type="text/javascript" src ="/Prueba/js/AJAX/InscripcionesAJAX.js"></script>
 <link rel="stylesheet" type="text/css" href="/Prueba/css/estilo2.css">
+<body onload="mostrarTodosLosAlumnosInscritos();">
 <main id = "main" class = "main1">
 <div> 
 
@@ -75,3 +76,4 @@
  <br>
  </div>
 </main>
+</body>

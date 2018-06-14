@@ -2,7 +2,7 @@
 </script>
 <script type="text/javascript" src="/Prueba/js/AJAX/AlumnosAJAX.js">
 </script>
-<body onload="cargarInfo();">
+<body onload="cargarInfo(${docente.idDocente});">
 <main id = "main" class = "main1">
 <div> 
 <fieldset>

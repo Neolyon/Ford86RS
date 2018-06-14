@@ -1,3 +1,33 @@
+function ocultarMenu() 
+{
+	document.getElementById("menu").style.visibility = "hidden";
+}
+
+function mostrarMenu() 
+{
+	document.getElementById("menu").style.visibility = "visible";
+}
+
+function ocultar1() 
+{
+	document.getElementById("pinsertar").style.visibility = "hidden";
+}
+
+function mostrar1() 
+{
+	document.getElementById("pinsertar").style.visibility = "visible";
+}
+
+function ocultar2() 
+{
+	document.getElementById("peditar").style.visibility = "hidden";
+}
+
+function mostrar2() 
+{
+	document.getElementById("peditar").style.visibility = "visible";
+}
+
 function ocultar() 
 {
 	document.getElementById("panel").style.visibility = "hidden";
@@ -23,13 +53,20 @@ function camdes()
 	}
 }
 
-function limpiar() 
+function limpiar1() 
 {
-	document.getElementById("desc").value = "";
-	limpiarSalon();
-	limpiarTurno();
-	//limpiarGrado();
-	//limpiarGrupo();
+	document.getElementById("nombre1").value = '';
+	document.getElementById("desc1").value = '';
+	document.getElementById('salon1').value = '';
+	document.getElementById('turno1').value = '';
+}
+
+function limpiar2() 
+{
+	document.getElementById("nombre2").value = '';
+	document.getElementById("desc2").value = '';
+	document.getElementById('salon2').value = '';
+	document.getElementById('turno2').value = '';
 }
 
 function guardar() 

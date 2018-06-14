@@ -1,4 +1,4 @@
-function mostrarAlumnosPorDocente() {
+function mostrarAlumnosPorDocente(id) {
 	XMLHttpRequest 
 	ajax = new XMLHttpRequest();
 	
@@ -10,7 +10,7 @@ function mostrarAlumnosPorDocente() {
 		}
 	};
 	
-	ajax.open("get", "Alumnos?op=ct&idD=2", true);
+	ajax.open("get", "Alumnos?op=ct&idD="+id, true);
 	ajax.send();
 }
 
@@ -63,7 +63,7 @@ function generarTablaPorDocente(datos)
 	}
 }
 
-function mostrarAlumnosPorDocenteTabla() 
+function mostrarAlumnosPorDocenteTabla(id) 
 {
 	XMLHttpRequest 
 	ajax = new XMLHttpRequest();
@@ -76,14 +76,14 @@ function mostrarAlumnosPorDocenteTabla()
 		}
 	};
 	
-	ajax.open("get", "Alumnos?op=ctt&idD=2", true);
+	ajax.open("get", "Alumnos?op=ctt&idD="+id, true);
 	ajax.send();
 }
 
-function cargarInfo() 
+function cargarInfo(id) 
 {
-	mostrarAlumnosPorDocente();
-	mostrarAlumnosPorDocenteTabla();
+	mostrarAlumnosPorDocente(id);
+	mostrarAlumnosPorDocenteTabla(id);
 }
 
 function tablaInfo(datos) 

@@ -1,9 +1,10 @@
 <script type="text/javascript" src="/Prueba/js/reinscripciones/reinscripciones.js">
+<script type="text/javascript" src="/Prueba/js/AJAX/ReinscripcionesAJAX.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/Prueba/css/estilo3.css">
 <body onload="ocultar(); OcularTodo();">
 <main id = "main" class = "main1">
-<form action="#" method="post">
+<form action="Reinscripciones?op=i&idD=${docente.idDocente}" method="post">
 <div id="principal">
 							<legend>Menú</legend>
 					
@@ -23,7 +24,7 @@
 					<div class="info">
 						<hr size=" "  width="1330" align="left">
 							<img src="/Prueba/imagenes/alumno.png">No. Control del alumno:  <td> <input id="numc" type="text" pattern="[0-9]{4}[A-Z]{2}[0-9]{4}" placeholder="Ejemplo: 2018MO0987"></td>
-							<input type="button" class="btn-info" value="Cargar Alumno" onclick="validarNC();"><input type="button" class="btn-danger" value="Cancelar" onclick="limpiar(); OcularTodo(); ocultar();">
+							<input type="button" class="btn-info" value="Cargar Alumno" onclick="validarNC(${docente.idDocente});"><input type="button" class="btn-danger" value="Cancelar" onclick="limpiar(); OcularTodo(); ocultar();">
 							
 					</div>
 					</div>
@@ -98,7 +99,8 @@
 								<td> Grupo a Cursar: *</td>  <td><input id="grupoc"  type="text" size="5" readonly></td>
 								<td> Turno Asignado: *</td>  <td><input id="turnoc"  type="text" size="5" readonly></td> </tr>
 							</table>
-
+					
+					<input type = "text" name = "numcon" id = "numcon" hidden = "hidden">
 					</fieldset>
 					
 					

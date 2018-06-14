@@ -1,14 +1,32 @@
-function ocultar() 
+function ocultarMenu() 
 {
-	document.getElementById("panel").style.visibility = "hidden";
+	document.getElementById("menu").style.visibility = "hidden";
 }
 
-function mostrar() 
+function mostrarMenu() 
 {
-	document.getElementById("panel").style.visibility = "visible";
+	document.getElementById("menu").style.visibility = "visible";
 }
 
+function ocultar1() 
+{
+	document.getElementById("pinsertar").style.visibility = "hidden";
+}
 
+function mostrar1() 
+{
+	document.getElementById("pinsertar").style.visibility = "visible";
+}
+
+function ocultar2() 
+{
+	document.getElementById("peditar").style.visibility = "hidden";
+}
+
+function mostrar2() 
+{
+	document.getElementById("peditar").style.visibility = "visible";
+}
 
 function camdes() 
 {
@@ -22,11 +40,20 @@ function camdes()
 	}
 }
 
-function limpiar() 
+function limpiar1() 
 {
-	document.getElementById("entrada").value = "";
-	document.getElementById("texta").value = "";
-	document.getElementById("imagenm").src = "/Prueba/imagenes/imagenpredeterminada.png"; 
+	document.getElementById("nom1").value = "";
+	document.getElementById("desc1").value = "";
+	document.getElementById("idg1").index = 0;
+	document.getElementById("imagenm1").src = "/Prueba/imagenes/imagenpredeterminada.png"; 
+}
+
+function limpiar2() 
+{
+	document.getElementById("nom2").value = "";
+	document.getElementById("desc2").value = "";
+	document.getElementById("idg2").index = 0;
+	document.getElementById("imagenm2").src = "/Prueba/imagenes/imagenpredeterminada.png"; 
 }
 
 function limpiarT() 
@@ -70,9 +97,9 @@ function eliminar()
 	tabla.appendChild(tr);
 }
 
-function imagen() 
+function imagen1() 
 {
-	var fileInput = document.getElementById('fi');
+	var fileInput = document.getElementById('fi1');
 
 	fileInput.addEventListener('change', function(e) {
 		var file = fileInput.files[0];
@@ -87,10 +114,10 @@ function imagen()
 				img.src = reader.result;
 				
 
-				document.getElementById('imagenm').src = img.src;
-				document.getElementById("imagenm").width = '150';
-				document.getElementById("imagenm").height = '150';
-				document.getElementById('fi').value = "";
+				document.getElementById('imagenm1').src = img.src;
+				document.getElementById("imagenm1").width = '150';
+				document.getElementById("imagenm1").height = '150';
+				document.getElementById('fi1').value = "";
 			}
 
 			reader.readAsDataURL(file);	

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Data.MateriasQuerys;
+import Objects.Materia;
 
 /**
  * Servlet implementation class Materias
@@ -33,6 +34,7 @@ public class Materias extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String op = request.getParameter("op");
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/opciones/consulta.jsp");
+		boolean red = false;
 		switch (op)
 		{
 			case "c":
@@ -59,6 +61,67 @@ public class Materias extends HttpServlet {
 					System.out.println("Eror al actualizar.");
 				}
 				break;
+			case "i":
+				String nom = request.getParameter("nom1");
+				String desc = request.getParameter("desc1");
+				int idg = Integer.parseInt(request.getParameter("idg1"));
+				
+				System.out.println("Nom: " + nom);
+				System.out.println("Desc: " + desc);
+				System.out.println("IDG: " + idg);
+				
+				Materia m = new Materia();
+				m.setNombre(nom);
+				m.setDescripcion(desc);
+				m.setIdGrado(idg);
+				m.setEstatus("A");
+				gq = new MateriasQuerys();
+				if (gq.insertar(m) != true)
+				{
+					System.out.println("Eror al insertar.");
+				}
+				rd = request.getRequestDispatcher("jsp/principal/materias.jsp");
+				red = true;
+				break;
+			case "ed":
+				String idM = request.getParameter("idM");
+				nom = request.getParameter("nom2");
+				desc = request.getParameter("desc2");
+				idg = Integer.parseInt(request.getParameter("idg2"));
+				
+				System.out.println("Nom: " + nom);
+				System.out.println("Desc: " + desc);
+				System.out.println("IDG: " + idg);
+				System.out.println("ID: " + idM);	
+				
+				m = new Materia();
+				m.setIdMateria(Integer.parseInt(idM));
+				m.setNombre(nom);
+				m.setDescripcion(desc);
+				m.setIdGrado(idg);
+				m.setEstatus("A");
+				gq = new MateriasQuerys();
+				if (gq.actualizar(m) != true)
+				{
+					System.out.println("Eror al actualizar.");
+				}
+				rd = request.getRequestDispatcher("jsp/principal/materias.jsp");
+				red = true;
+				break;
+			case "cc":
+				System.out.println("Entro");
+				int id = Integer.parseInt(request.getParameter("id"));
+				gq = new MateriasQuerys();
+				json = gq.ci(id);
+				out = response.getWriter();
+				response.setContentType("application/json");
+				out.println(json);
+				out.close();
+				break;
+		}
+		if (red == true)
+		{
+			rd.forward(request, response);
 		}
 	}
 
